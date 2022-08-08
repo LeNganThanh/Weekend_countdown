@@ -21,7 +21,7 @@ const dayArr = [
   "Friday",
   "Saturday",
 ];
-const date = dayArr[today.getDay()];
+const weekday = dayArr[today.getDay()];
 const goBtn = document.getElementById("submitBtn");
 goBtn.style.width = "5rem";
 goBtn.style.height = "3rem";
@@ -31,7 +31,7 @@ goBtn.style.marginLeft = "20px";
 
 goBtn.addEventListener("click", function (e) {
   e.preventDefault();
-  title.textContent = `Hello ${useName.value}. Today is ${date}. Only ${
+  title.textContent = `Hello ${useName.value}. Today is ${weekday}. Only ${
     5 - today.getDay()
   } days left until weekend!`;
 });
