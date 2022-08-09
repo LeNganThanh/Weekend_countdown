@@ -29,9 +29,21 @@ goBtn.style.fontSize = "1.3rem";
 goBtn.style.borderRadius = "5px";
 goBtn.style.marginLeft = "20px";
 
+const daysLeft = function () {
+  const dayOfWeek = 5 - today.getDay();
+  console.log(dayOfWeek);
+  if (dayOfWeek > 1 && dayOfWeek < 5) {
+    return `Only ${dayOfWeek} days left until weekend.`;
+  } else if (dayOfWeek === 1) {
+    return `Only ${dayOfWeek} day left until weekend.`;
+  } else {
+    return `It's the weekend 🎉  `;
+  }
+};
+
 goBtn.addEventListener("click", function (e) {
   e.preventDefault();
-  title.textContent = `Hello ${useName.value}. Today is ${weekday}. Only ${
-    5 - today.getDay()
-  } days left until weekend!`;
+  title.textContent = `Hello ${
+    useName.value
+  }. Today is ${weekday}. ${daysLeft()} `;
 });
