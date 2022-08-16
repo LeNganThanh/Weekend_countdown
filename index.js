@@ -11,6 +11,24 @@ useName.style.width = "25rem";
 useName.style.height = "3rem";
 useName.style.fontSize = "1.5rem";
 
+/**
+ * another solution to get the local date
+const date = new Date();
+const options = { weekday: 'long'};
+const getDay = date.toLocaleDateString('en-EN', options);
+
+// console.log(getDay); // Monday
+// Find how many days left till the weekend
+
+const weekDays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+let number = 0;
+for(let i = 0; i < weekDays.length; i++){
+    if(weekDays[i] === getDay){
+        number = weekDays.length - i - 1;
+    }
+}
+*
+*/
 const today = new Date();
 const dayArr = [
   "Sunday",
